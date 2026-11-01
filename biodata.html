@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abubakar Kerur - Bio-data | Personal Information">
+    <title>Bio-data | Abubakar Kerur</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="navbar no-print" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Abubakar Kerur</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html"   class="nav-link">Home</a></li>
+                <li><a href="resume.html"  class="nav-link nav-btn">Resume</a></li>
+                <li><a href="biodata.html" class="nav-link active">Bio-data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN BIO-DATA CONTENT ==================== -->
+    <main class="biodata-page">
+        <div class="container">
+
+            <!-- Print Button — hidden when printing -->
+            <div class="print-bar no-print">
+                <h1 class="page-heading">My Bio-data</h1>
+                <button onclick="window.print()" class="btn btn-primary print-btn">
+                    &#128438; Print / Save as PDF
+                </button>
+            </div>
+
+            <!-- ===== BIO-DATA CARD ===== -->
+            <div class="biodata-card" id="biodata-content">
+
+                <!-- ----- HEADER: Photo + Name ----- -->
+                <div class="biodata-header">
+                    <img src="images/profile.jpg"
+                         alt="Abubakar Kerur - Profile Photo"
+                         class="biodata-photo">
+                    <div class="biodata-header-info">
+                        <h2 class="biodata-name">Abubakar Kerur</h2>
+                        <p class="biodata-designation">
+                            Computer Science and Engineering Student
+                        </p>
+                        <p class="biodata-college">
+                            KLE Institute of Technology, Hubballi
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 1: PERSONAL INFORMATION ----- -->
+                <!--
+                    <dl> = Definition List — perfect for label:value pairs
+                    <dt> = Definition Term (the label / field name)
+                    <dd> = Definition Description (the actual value)
+                    We wrap each pair in a <div> so we can style each row.
+                -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#128100; Personal Information
+                    </h3>
+                    <dl class="info-list">
+                        <div class="info-row">
+                            <dt>Full Name</dt>
+                            <dd>Abubakar Kerur</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Date of Birth</dt>
+                            <dd>10 December 2005</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Gender</dt>
+                            <dd>Male</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Nationality</dt>
+                            <dd>Indian</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Languages Known</dt>
+                            <dd>English, Kannada, Hindi</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 2: CONTACT INFORMATION ----- -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#128222; Contact Information
+                    </h3>
+                    <dl class="info-list">
+                        <div class="info-row">
+                            <dt>Email Address</dt>
+                            <dd>
+                                <a href="mailto:abubakarkerur2005@gmail.com">
+                                    abubakarkerur2005@gmail.com
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Phone Number</dt>
+                            <dd>9632529701</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>City</dt>
+                            <dd>Ilkal</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>State</dt>
+                            <dd>Karnataka</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Country</dt>
+                            <dd>India</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 3: FAMILY INFORMATION ----- -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#127968; Family Information
+                    </h3>
+                    <dl class="info-list">
+                        <div class="info-row">
+                            <dt>Father's Name</dt>
+                            <dd>Rajmahammad Kerur</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Mother's Name</dt>
+                            <dd>Malanbi Kerur</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>Number of Siblings</dt>
+                            <dd>2</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 4: HOBBIES ----- -->
+                <!--
+                    <ul> = unordered list (bullet points)
+                    <li> = list item
+                    Used here because hobbies are a simple list — no order needed.
+                -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#127918; Hobbies &amp; Interests
+                    </h3>
+                    <ul class="biodata-list">
+                        <li>Learning new technologies</li>
+                        <li>Coding and Programming</li>
+                        <li>Playing outdoor games</li>
+                        <li>Reading newspapers and magazines</li>
+                    </ul>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 5: PERSONAL STRENGTHS ----- -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#128170; Personal Strengths
+                    </h3>
+                    <ul class="biodata-list">
+                        <li>Good problem-solving ability</li>
+                        <li>Quick learner</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 6: ABOUT ME ----- -->
+                <!--
+                    <p> = paragraph tag — for a block of text
+                -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#128203; About Me
+                    </h3>
+                    <p class="biodata-para">
+                        I am a Computer Science Engineering student with a keen interest
+                        in programming and emerging technologies. I enjoy learning new
+                        concepts, improving my technical skills, and developing solutions
+                        to real-world problems.
+                    </p>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 7: FUTURE AMBITION ----- -->
+                <section class="biodata-section">
+                    <h3 class="biodata-section-title">
+                        &#127919; Future Ambition
+                    </h3>
+                    <p class="biodata-para">
+                        To become a successful software developer, gain expertise in
+                        advanced technologies, and contribute to innovative projects
+                        that solve real-world challenges.
+                    </p>
+                </section>
+
+            </div>
+            <!-- End of biodata-card -->
+
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer no-print">
+        <div class="container">
+            <p>&copy; 2026 Abubakar Kerur. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="biodata.html">Bio-data</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

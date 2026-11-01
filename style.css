@@ -1,0 +1,737 @@
+/* ============================================================
+   style.css — Main Stylesheet
+   Personal Portfolio Website — Abubakar Kerur
+   ============================================================ */
+
+/* ==================== 1. CSS VARIABLES ==================== */
+/*
+    Variables let us define values once and reuse everywhere.
+    To change the primary colour, change it here once —
+    it updates automatically across all three pages.
+*/
+:root {
+    --primary-blue:   #1a73e8;
+    --primary-dark:   #1557b0;
+    --primary-light:  #e8f0fe;
+    --bg-white:       #ffffff;
+    --bg-light:       #f8f9fa;
+    --text-dark:      #202124;
+    --text-medium:    #5f6368;
+    --text-light:     #80868b;
+    --border-color:   #dadce0;
+    --shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md:      0 4px 12px rgba(0, 0, 0, 0.10);
+    --shadow-lg:      0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-hover:   0 8px 20px rgba(26, 115, 232, 0.20);
+    --section-pad:    80px 0;
+    --max-width:      1100px;
+    --radius-sm:      6px;
+    --radius-md:      12px;
+    --radius-lg:      16px;
+    --transition:     all 0.3s ease;
+    --nav-height:     70px;
+}
+
+/* ==================== 2. RESET & BASE STYLES ==================== */
+/*
+    Reset removes default browser styles so we start with a clean slate.
+    box-sizing: border-box means padding is included in width — easier layout.
+*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links like #about */
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==================== 3. REUSABLE UTILITIES ==================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: var(--section-pad);
+    background-color: var(--bg-white);
+}
+
+.section-alt {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+/* Blue decorative underline bar below every section title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* ==================== 4. BUTTONS ==================== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border-color: var(--primary-blue);
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: var(--primary-light);
+    color: var(--primary-blue);
+    border-color: var(--primary-light);
+}
+.btn-secondary:hover {
+    background-color: #d2e3fc;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+.btn-outline:hover {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ==================== 5. NAVIGATION BAR ==================== */
+/*
+    position: fixed keeps the navbar visible as you scroll.
+    z-index: 1000 ensures it appears above all other content.
+*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.nav-logo:hover { color: var(--primary-dark); }
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 8px 14px;
+    color: var(--text-medium);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-blue);
+    background-color: var(--primary-light);
+}
+
+/* Special button-style nav links for Resume and Bio-data */
+.nav-btn {
+    background-color: var(--primary-blue);
+    color: #ffffff !important;
+}
+.nav-btn:hover {
+    background-color: var(--primary-dark) !important;
+    color: #ffffff !important;
+}
+
+/* Hamburger toggle button — hidden on desktop, shown on mobile */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2.5px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* ==================== 6. HERO SECTION (HOME PAGE) ==================== */
+/*
+    min-height: 100vh makes the hero fill the full screen height.
+    The gradient background adds a subtle premium look.
+*/
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--nav-height);
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 60%, #e8f0fe 100%);
+}
+
+.hero-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Profile photo — circular with blue ring */
+.hero-image { flex-shrink: 0; }
+.hero-image img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 5px solid var(--primary-blue);
+    box-shadow: 0 0 0 8px var(--primary-light), var(--shadow-lg);
+    transition: var(--transition);
+}
+.hero-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px var(--primary-light), var(--shadow-lg);
+}
+
+.hero-content  { flex: 1; }
+.hero-greeting { font-size: 1rem; color: var(--primary-blue); font-weight: 600;
+                 letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.hero-name     { font-size: 3rem; font-weight: 800; color: var(--text-dark);
+                 line-height: 1.1; margin-bottom: 10px; letter-spacing: -1px; }
+.hero-title    { font-size: 1.2rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 18px; }
+.hero-intro    { font-size: 1rem; color: var(--text-medium); line-height: 1.8;
+                 margin-bottom: 32px; max-width: 500px; }
+.hero-buttons  { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ==================== 7. ABOUT SECTION ==================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.about-text p { font-size: 1rem; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; }
+
+.about-details { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.about-details li {
+    font-size: 0.92rem;
+    color: var(--text-medium);
+    padding: 10px 16px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary-blue);
+}
+.detail-label { font-weight: 600; color: var(--text-dark); margin-right: 8px; }
+
+.about-side { display: flex; flex-direction: column; gap: 18px; }
+
+.about-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.about-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--primary-light);
+}
+.about-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+.about-card p  { font-size: 0.88rem; color: var(--text-medium); line-height: 1.7; }
+
+.tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: var(--primary-light);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+/* ==================== 8. SKILLS SECTION ==================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.skill-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.skill-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    border-color: var(--primary-blue);
+}
+.skill-icon    { font-size: 2rem; margin-bottom: 12px; }
+.skill-card h3 { font-size: 0.88rem; font-weight: 700; color: var(--text-dark); margin-bottom: 14px; }
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.skill-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: var(--primary-light);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.skill-tag:hover {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+}
+
+/* ==================== 9. PROJECTS SECTION ==================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.project-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary-blue);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.project-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+.project-card p  { font-size: 0.9rem; color: var(--text-medium); line-height: 1.7; margin-bottom: 18px; }
+
+.tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tech-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--primary-light);
+    color: var(--primary-blue);
+    border-radius: var(--radius-sm);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+/* ==================== 10. CONTACT SECTION ==================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.contact-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 36px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.contact-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    border-color: var(--primary-blue);
+}
+.contact-icon    { font-size: 2.2rem; margin-bottom: 12px; }
+.contact-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+.contact-card p  { font-size: 0.88rem; color: var(--text-medium); }
+.contact-card a  { color: var(--primary-blue); text-decoration: none; font-weight: 500; }
+.contact-card a:hover { text-decoration: underline; }
+
+/* ==================== 11. FOOTER ==================== */
+.footer {
+    background-color: var(--text-dark);
+    color: #9aa0a6;
+    padding: 36px 0;
+    text-align: center;
+}
+.footer .container { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.footer p { font-size: 0.88rem; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: #9aa0a6; text-decoration: none; font-size: 0.88rem; transition: var(--transition); }
+.footer-links a:hover { color: #ffffff; }
+.footer-sub { font-size: 0.8rem; color: #5f6368; }
+
+/* ==================== 12. RESUME PAGE ==================== */
+.resume-page {
+    padding-top: calc(var(--nav-height) + 32px);
+    padding-bottom: 60px;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+.print-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+.page-heading { font-size: 1.8rem; font-weight: 700; color: var(--text-dark); }
+
+/* The main white resume card */
+.resume-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 48px;
+    border: 1px solid var(--border-color);
+}
+
+/* Resume header: photo + name + contact */
+.resume-header { display: flex; align-items: center; gap: 36px; margin-bottom: 8px; }
+.resume-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--primary-blue);
+    flex-shrink: 0;
+}
+.resume-name        { font-size: 1.8rem; font-weight: 800; color: var(--text-dark); margin-bottom: 4px; }
+.resume-designation { font-size: 1rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 4px; }
+.resume-college     { font-size: 0.85rem; color: var(--text-medium); margin-bottom: 12px; }
+.resume-contact-bar { display: flex; flex-wrap: wrap; gap: 16px; }
+.resume-contact-bar span { font-size: 0.83rem; color: var(--text-medium); }
+
+.resume-divider { border: none; border-top: 1px solid var(--border-color); margin: 24px 0; }
+
+.resume-section       { margin-bottom: 8px; }
+.resume-section-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--primary-light);
+}
+.resume-objective { font-size: 0.93rem; color: var(--text-medium); line-height: 1.8; }
+
+/* Education table */
+.edu-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.edu-table th {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+}
+.edu-table td { padding: 11px 14px; color: var(--text-medium); border-bottom: 1px solid var(--border-color); }
+.edu-table tbody tr:last-child td { border-bottom: none; }
+.edu-table tbody tr:hover { background-color: var(--bg-light); }
+
+/* Skills rows */
+.skills-resume-grid { display: flex; flex-direction: column; gap: 8px; }
+.skill-resume-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary-blue);
+}
+.skill-label { font-weight: 600; color: var(--text-dark); font-size: 0.87rem; min-width: 200px; flex-shrink: 0; }
+.skill-value { color: var(--text-medium); font-size: 0.87rem; }
+
+/* Projects in resume */
+.resume-project {
+    margin-bottom: 18px;
+    padding: 16px 18px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-light);
+}
+.resume-project:last-child { margin-bottom: 0; }
+.project-title     { font-size: 0.93rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+.project-tech-line { font-size: 0.83rem; color: var(--text-medium); margin-bottom: 10px; }
+.project-points { padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+.project-points li { font-size: 0.86rem; color: var(--text-medium); line-height: 1.6; }
+
+/* Lists */
+.resume-list { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.resume-list li { font-size: 0.9rem; color: var(--text-medium); }
+
+.resume-list-horizontal { flex-direction: row; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0; }
+.resume-list-horizontal li { position: relative; padding-left: 14px; }
+.resume-list-horizontal li::before { content: '•'; position: absolute; left: 0; color: var(--primary-blue); font-weight: bold; }
+
+/* ==================== 13. BIO-DATA PAGE ==================== */
+.biodata-page {
+    padding-top: calc(var(--nav-height) + 32px);
+    padding-bottom: 60px;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+/* The main white bio-data card */
+.biodata-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 48px;
+    border: 1px solid var(--border-color);
+}
+
+.biodata-header { display: flex; align-items: center; gap: 36px; margin-bottom: 8px; }
+.biodata-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--primary-blue);
+    flex-shrink: 0;
+}
+.biodata-name        { font-size: 1.8rem; font-weight: 800; color: var(--text-dark); margin-bottom: 4px; }
+.biodata-designation { font-size: 1rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 4px; }
+.biodata-college     { font-size: 0.85rem; color: var(--text-medium); }
+
+.biodata-section       { margin-bottom: 8px; }
+.biodata-section-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--primary-light);
+}
+
+/* Definition list — label:value rows */
+.info-list { display: flex; flex-direction: column; }
+.info-row  { display: flex; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--bg-light); }
+.info-row:last-child { border-bottom: none; }
+.info-row dt { font-weight: 600; color: var(--text-dark); font-size: 0.88rem; min-width: 200px; flex-shrink: 0; }
+.info-row dd { color: var(--text-medium); font-size: 0.88rem; margin: 0; }
+.info-row dd a { color: var(--primary-blue); text-decoration: none; }
+.info-row dd a:hover { text-decoration: underline; }
+
+.biodata-list { padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+.biodata-list li { font-size: 0.9rem; color: var(--text-medium); line-height: 1.6; }
+.biodata-para { font-size: 0.93rem; color: var(--text-medium); line-height: 1.8; }
+
+/* Declaration blockquote */
+.declaration-text {
+    font-size: 0.93rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+    border-left: 4px solid var(--primary-blue);
+    padding: 16px 20px;
+    background-color: var(--primary-light);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 28px;
+    font-style: italic;
+}
+
+.declaration-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.decl-item   { text-align: center; min-width: 160px; }
+.decl-label  { font-size: 0.78rem; color: var(--text-light); font-weight: 600;
+               text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.decl-value  { font-size: 0.88rem; color: var(--text-medium); border-top: 1px solid var(--border-color); padding-top: 8px; }
+.decl-name   { font-weight: 700; color: var(--text-dark); }
+
+/* ==================== 14. RESPONSIVE — MEDIA QUERIES ==================== */
+/*
+    Tablet and mobile: max-width 768px
+    Small phones: max-width 480px
+*/
+@media (max-width: 768px) {
+    :root { --section-pad: 60px 0; }
+
+    /* Show hamburger button on mobile */
+    .nav-toggle { display: flex; }
+
+    /* Mobile nav menu — hidden by default, shown when .active is added by JS */
+    .nav-menu {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-md);
+        display: none;
+    }
+    .nav-menu.active { display: flex; }
+    .nav-link { padding: 12px 24px; border-radius: 0; width: 100%; }
+
+    /* Hero stacks vertically on mobile */
+    .hero-container { flex-direction: column; text-align: center; padding: 40px 24px; gap: 32px; }
+    .hero-image img { width: 190px; height: 190px; }
+    .hero-name  { font-size: 2.2rem; }
+    .hero-intro { max-width: 100%; }
+    .hero-buttons { justify-content: center; }
+
+    /* Grids go to single column */
+    .about-grid    { grid-template-columns: 1fr; gap: 32px; }
+    .skills-grid   { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1fr; }
+    .contact-grid  { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+
+    /* Resume and Bio-data card padding */
+    .resume-card, .biodata-card { padding: 28px 20px; }
+
+    /* Headers stack vertically */
+    .resume-header, .biodata-header { flex-direction: column; text-align: center; gap: 20px; }
+    .resume-contact-bar { justify-content: center; }
+
+    /* Education table scrollable on small screens */
+    .edu-table { display: block; overflow-x: auto; white-space: nowrap; }
+
+    /* Skills rows stack */
+    .skill-resume-row { flex-direction: column; gap: 4px; }
+    .skill-label { min-width: unset; }
+
+    .section-title { font-size: 1.6rem; }
+    .print-bar { flex-direction: column; gap: 16px; text-align: center; }
+    .declaration-footer { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 480px) {
+    .hero-name    { font-size: 1.9rem; }
+    .skills-grid  { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn          { width: 100%; max-width: 280px; }
+    .info-row     { flex-direction: column; gap: 2px; }
+    .info-row dt  { min-width: unset; }
+}
+
+/* ==================== 15. PRINT STYLES ==================== */
+/*
+    @media print applies ONLY when the user prints the page.
+    Elements with class="no-print" (navbar, footer, print button)
+    are hidden so only the resume/bio-data card content is printed.
+*/
+@media print {
+
+    .no-print { display: none !important; }
+
+    body { background-color: #ffffff; color: #000000; font-size: 11pt; }
+
+    .resume-page,
+    .biodata-page { padding-top: 0; background-color: #ffffff; }
+
+    .resume-card,
+    .biodata-card { box-shadow: none; border: none; padding: 20px; border-radius: 0; }
+
+    .resume-section-title,
+    .biodata-section-title { color: #1a73e8; }
+
+    .edu-table th {
+        background-color: #1a73e8 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .skill-resume-row {
+        background-color: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Prevent sections from splitting across printed pages */
+    .resume-section,
+    .biodata-section,
+    .resume-project { page-break-inside: avoid; }
+}

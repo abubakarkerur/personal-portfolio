@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abubakar Kerur - Resume | B.E. Computer Science and Engineering Student">
+    <title>Resume | Abubakar Kerur</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <!--
+        class="no-print" will hide this when user prints the page.
+        We apply that rule in CSS using @media print.
+    -->
+    <nav class="navbar no-print" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Abubakar Kerur</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html"   class="nav-link">Home</a></li>
+                <li><a href="resume.html"  class="nav-link active">Resume</a></li>
+                <li><a href="biodata.html" class="nav-link nav-btn">Bio-data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN RESUME CONTENT ==================== -->
+    <!--
+        <main> = semantic HTML5 tag — marks the main content of a page.
+        Only ONE <main> per page (best practice).
+    -->
+    <main class="resume-page">
+        <div class="container">
+
+            <!-- PRINT BUTTON — hidden when printing via CSS @media print -->
+            <div class="print-bar no-print">
+                <h1 class="page-heading">My Resume</h1>
+                <button onclick="window.print()" class="btn btn-primary print-btn">
+                    &#128438; Print / Save as PDF
+                </button>
+            </div>
+
+            <!-- ===== RESUME CARD ===== -->
+            <!-- This entire card is what gets printed -->
+            <div class="resume-card" id="resume-content">
+
+                <!-- ----- SECTION 1: HEADER — Photo + Name + Contact ----- -->
+                <div class="resume-header">
+                    <img src="images/profile.jpg"
+                         alt="Abubakar Kerur - Profile Photo"
+                         class="resume-photo">
+                    <div class="resume-header-info">
+                        <h2 class="resume-name">Abubakar Kerur</h2>
+                        <p class="resume-designation">
+                            Computer Science and Engineering Student
+                        </p>
+                        <p class="resume-college">
+                            KLE Institute of Technology, Hubballi | VTU, Belagavi
+                        </p>
+                        <div class="resume-contact-bar">
+                            <span>&#128231; abubakarkerur2005@gmail.com</span>
+                            <span>&#128241; 9632529701</span>
+                            <span>&#128205; Ilkal, Karnataka, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal divider line between sections -->
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 2: CAREER OBJECTIVE ----- -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Career Objective</h3>
+                    <p class="resume-objective">
+                        To leverage my strong foundation in Computer Science and
+                        Engineering to build a successful career as a software developer,
+                        continuously enhance my technical expertise in modern technologies,
+                        and contribute to innovative projects that address real-world
+                        challenges.
+                    </p>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 3: EDUCATIONAL QUALIFICATIONS ----- -->
+                <!--
+                    We use <table> here because education data is
+                    naturally tabular (rows and columns of related data).
+                    <thead> = header row, <tbody> = data rows
+                    <th> = header cell (bold), <td> = data cell
+                -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Educational Qualifications</h3>
+                    <table class="edu-table">
+                        <thead>
+                            <tr>
+                                <th>Qualification</th>
+                                <th>Institution</th>
+                                <th>Board / University</th>
+                                <th>Year</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>B.E. &ndash; Computer Science &amp; Engineering</td>
+                                <td>KLE Institute of Technology, Hubballi</td>
+                                <td>VTU, Belagavi</td>
+                                <td>2023 &ndash; Present</td>
+                                <td>CGPA: 8.55 (5th Sem)</td>
+                            </tr>
+                            <tr>
+                                <td>PUC / 12th (Science)</td>
+                                <td>GK Malgonda PU Science College, Ilkal</td>
+                                <td>PU Board, Karnataka</td>
+                                <td>2022 &ndash; 2023</td>
+                                <td>95.83%</td>
+                            </tr>
+                            <tr>
+                                <td>SSLC / 10th</td>
+                                <td>Adarsha Vidyalaya (RMSA), Hungund</td>
+                                <td>KSEEB, Karnataka</td>
+                                <td>2020 &ndash; 2021</td>
+                                <td>97.92%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 4: TECHNICAL SKILLS ----- -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Technical Skills</h3>
+                    <div class="skills-resume-grid">
+
+                        <div class="skill-resume-row">
+                            <span class="skill-label">Programming Languages</span>
+                            <span class="skill-value">C, C++, Java, Python</span>
+                        </div>
+
+                        <div class="skill-resume-row">
+                            <span class="skill-label">Web Technologies</span>
+                            <span class="skill-value">HTML, CSS, JavaScript, PHP</span>
+                        </div>
+
+                        <div class="skill-resume-row">
+                            <span class="skill-label">Database Technologies</span>
+                            <span class="skill-value">SQL, MySQL</span>
+                        </div>
+
+                        <div class="skill-resume-row">
+                            <span class="skill-label">Tools &amp; Software</span>
+                            <span class="skill-value">VS Code, XAMPP, GitHub</span>
+                        </div>
+
+                    </div>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 5: ACADEMIC PROJECTS ----- -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Academic Projects</h3>
+
+                    <div class="resume-project">
+                        <h4 class="project-title">
+                            1. Vehicle Rental Management System
+                        </h4>
+                        <p class="project-tech-line">
+                            <strong>Technologies:</strong>
+                            HTML, CSS, JavaScript, PHP, MySQL, XAMPP
+                        </p>
+                        <ul class="project-points">
+                            <li>
+                                Developed a web-based application to manage vehicle
+                                details, customer records, bookings and payments.
+                            </li>
+                            <li>
+                                Implemented database operations and automated vehicle
+                                availability updates using SQL triggers.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-project">
+                        <h4 class="project-title">
+                            2. Algorithms Visualizer Dashboard
+                        </h4>
+                        <p class="project-tech-line">
+                            <strong>Technologies:</strong>
+                            HTML, CSS, JavaScript, C
+                        </p>
+                        <ul class="project-points">
+                            <li>
+                                Developed an interactive dashboard to visualize
+                                algorithms using graphical representations and animations.
+                            </li>
+                            <li>
+                                Implemented Dijkstra's Shortest Path Algorithm and
+                                Bubble Sort to demonstrate their working.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 6: PERSONAL STRENGTHS ----- -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Personal Strengths</h3>
+                    <ul class="resume-list">
+                        <li>Problem-solving skills</li>
+                        <li>Teamwork</li>
+                        <li>Quick learner</li>
+                    </ul>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 7: AREAS OF INTEREST ----- -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Areas of Interest</h3>
+                    <ul class="resume-list">
+                        <li>Software Development</li>
+                        <li>Artificial Intelligence and Machine Learning</li>
+                        <li>Web Development</li>
+                        <li>Data Structures and Algorithms</li>
+                    </ul>
+                </section>
+
+                <hr class="resume-divider">
+
+                <!-- ----- SECTION 8: LANGUAGES KNOWN ----- -->
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Languages Known</h3>
+                    <ul class="resume-list resume-list-horizontal">
+                        <li>English</li>
+                        <li>Kannada</li>
+                        <li>Hindi</li>
+                    </ul>
+                </section>
+
+            </div>
+            <!-- End of resume-card -->
+
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer no-print">
+        <div class="container">
+            <p>&copy; 2026 Abubakar Kerur. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="biodata.html">Bio-data</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
